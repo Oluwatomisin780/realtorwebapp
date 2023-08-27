@@ -1,19 +1,13 @@
-
 import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { BsEye, BsEyeSlash } from 'react-icons/bs';
 import { IoLogoGoogle } from 'react-icons/io';
 import { Link } from 'react-router-dom';
-
-
-
-
+import Header from '../components/Header';
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
-  
 
-  
   const loginSchema = Yup.object().shape({
     email: Yup.string()
       .email('Invalid email')
@@ -22,11 +16,11 @@ const Register = () => {
       .min(8, 'Password must be at least 8 characters')
       .required('Password is required'),
   });
-  
+
   return (
     <React.Fragment>
+      <Header />
       <section className="w-full h-[100vh] flex flex-col justify-center items-center md:px-0 px-5 bg-gray-100">
-        
         <div className="shadow-[0px_8px_16px_#D0D2D5] bg-white py-8 px-10 rounded-xl">
           <h2 className="text-black text-center mb-8 md:text-2xl text-xl font-medium title-font">
             Welcome to <span className="text-[#0F8649]">Ogidi Brown</span>
@@ -37,9 +31,15 @@ const Register = () => {
               password: '',
             }}
             validationSchema={loginSchema}
-            
           >
-            {({ errors, touched, handleBlur, handleChange, handleSubmit, values }) => (
+            {({
+              errors,
+              touched,
+              handleBlur,
+              handleChange,
+              handleSubmit,
+              values,
+            }) => (
               <Form onSubmit={handleSubmit}>
                 <button
                   type="button"
