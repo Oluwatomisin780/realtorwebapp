@@ -29,10 +29,12 @@ const location = useLocation()
   };
 
   return (
-    <nav className='h-[100px] flex p-10 justify-between items-center '>
+    <nav className='h-[100px] flex p-10  justify-between items-center '>
       <Link to="/">
        <h1 className=" text-[#287CCD] font-bold text-[25px]">BrownTom</h1>
       </Link>
+      
+      
 
       <FaBars
         onClick={toggleNav}
@@ -52,6 +54,7 @@ const location = useLocation()
           </Link>
         ))}
       </div>
+      
 
       <div
         className={`absolute right-[35px] top-[85px] md:hidden flex flex-col items-center text-white gap-[20px] bg-[#287CCD] w-[200px] rounded-[10px] `}
@@ -70,13 +73,15 @@ const location = useLocation()
             </Link>
           ))}
       </div>
-      <div>
+      <div className=''>
         <Link to="/register">
         
           <button className='bg-[#287CCD] w-[90px] h-[40px] rounded-[5px] text-white'>Register</button>
         
         </Link>
       </div>
+
+      
     </nav>
   );
 };
