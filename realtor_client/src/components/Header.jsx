@@ -74,9 +74,9 @@ const location = useLocation()
           ))}
       </div>
       <div className=''>
-        <Link to="/register">
+        <Link to="/login">
         
-          <button className='bg-[#287CCD] w-[90px] h-[40px] rounded-[5px] text-white'>Register</button>
+          <button className='bg-[#287CCD] w-[90px] h-[40px] rounded-[5px] text-white'>Login</button>
         
         </Link>
       </div>

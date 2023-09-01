@@ -5,7 +5,7 @@ import { BsEye, BsEyeSlash } from 'react-icons/bs';
 import { IoLogoGoogle } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-const Register = () => {
+const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const loginSchema = Yup.object().shape({
@@ -22,9 +22,7 @@ const Register = () => {
       <Header />
       <section className="w-full h-[100vh] flex flex-col justify-center items-center md:px-0 px-5 bg-gray-100">
         <div className="shadow-[0px_8px_16px_#D0D2D5] bg-white py-8 px-10 rounded-xl">
-          <h2 className="text-black text-center mb-8 md:text-2xl text-xl font-medium title-font">
           
-          </h2>
           <Formik
             initialValues={{
               email: '',
@@ -136,10 +134,10 @@ const Register = () => {
                 <p className="text-center text-xs text-black">
                   Don't have an account?{' '}
                   <Link
-                    href="/dashboard/register"
+                    href="/signup"
                     className="text-center text-xs text-[#0F8649]"
                   >
-                    Register
+                    Signup
                   </Link>
                 </p>
               </Form>
@@ -151,4 +149,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
