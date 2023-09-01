@@ -70,7 +70,7 @@ const Signup = () => {
                     onBlur={handleBlur}
                     onChange={handleChange}
                     placeholder="Enter your email here"
-                    className="w-full bg-gray-600 bg-opacity-20 focus:bg-transparent focus:ring-2 focus:ring-[#0F8649] rounded border border-gray-600 focus:border-[#0F8649] text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-600 bg-opacity-20 focus:bg-transparent focus:ring-2 focus:ring-[#287CCD] rounded border border-gray-600 focus:border-[#287CCD] text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                   {errors.email && touched.email ? (
                     <div className="text-xs text-[red] mt-2">
@@ -93,7 +93,7 @@ const Signup = () => {
                     onBlur={handleBlur}
                     onChange={handleChange}
                     placeholder="Enter your password here"
-                    className="w-full bg-gray-600 bg-opacity-20 focus:bg-transparent focus:ring-2 focus:ring-[#0F8649] rounded border border-gray-600 focus:border-[#0F8649] text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-600 bg-opacity-20 focus:bg-transparent focus:ring-2 focus:ring-[#287CCD] rounded border border-gray-600 focus:border-[#287CCD] text-base outline-none text-black py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                   <div
                     className="absolute top-11 right-0 px-3 py-2 cursor-pointer"
@@ -114,17 +114,17 @@ const Signup = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full mb-3 text-white bg-[#0F8649] border-0 py-2 px-8 focus:outline-none hover:bg-[#085c30] rounded text-lg"
+                  className="w-full mb-3 text-white bg-[#287CCD] border-0 py-2 px-8 focus:outline-none hover:bg-[#287CCD] rounded text-lg"
                 >
                   SignUp
                 </button>
                 <p className="text-center text-xs text-black mb-4">
                   By continuing, you agree to Ogidi Brown's{' '}
-                  <Link href="/" className="text-[#0F8649]">
+                  <Link href="/" className="text-[#287CCD]">
                     Terms and Conditions
                   </Link>{' '}
                   and{' '}
-                  <Link href="/" className="text-[#0F8649]">
+                  <Link href="/" className="text-[#287CCD]">
                     Privacy Policy
                   </Link>
                   .
@@ -133,7 +133,7 @@ const Signup = () => {
                   Already have an account?{' '}
                   <Link
                     href="/login"
-                    className="text-center text-xs text-[#0F8649]"
+                    className="text-center text-xs text-[##287CCD]"
                   >
                     Login
                   </Link>
