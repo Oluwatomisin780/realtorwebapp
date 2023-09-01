@@ -120,11 +120,11 @@ const Signup = () => {
                 </button>
                 <p className="text-center text-xs text-black mb-4">
                   By continuing, you agree to Ogidi Brown's{' '}
-                  <Link href="/" className="text-[#287CCD]">
+                  <Link to="/" className="text-[#287CCD]">
                     Terms and Conditions
                   </Link>{' '}
                   and{' '}
-                  <Link href="/" className="text-[#287CCD]">
+                  <Link to="/" className="text-[#287CCD]">
                     Privacy Policy
                   </Link>
                   .
@@ -132,7 +132,7 @@ const Signup = () => {
                 <p className="text-center text-xs text-black">
                   Already have an account?{' '}
                   <Link
-                    href="/login"
+                   to="/login"
                     className="text-center text-xs text-[##287CCD]"
                   >
                     Login

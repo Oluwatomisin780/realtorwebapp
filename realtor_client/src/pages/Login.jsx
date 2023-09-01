@@ -110,7 +110,7 @@ const Login = () => {
                       {errors.password}
                     </div>
                   ) : null}
-                  <Link href="/" className="text-xs text-[#287CCD]">
+                  <Link to="/" className="text-xs text-[#287CCD]">
                     Forgot your password?
                   </Link>
                 </div>
@@ -122,11 +122,11 @@ const Login = () => {
                 </button>
                 <p className="text-center text-xs text-black mb-4">
                   By continuing, you agree to Ogidi Brown's{' '}
-                  <Link href="/" className="text-[#287CCD]">
+                  <Link to="/" className="text-[#287CCD]">
                     Terms and Conditions
                   </Link>{' '}
                   and{' '}
-                  <Link href="/" className="text-[#287CCD]">
+                  <Link to="/" className="text-[#287CCD]">
                     Privacy Policy
                   </Link>
                   .
@@ -134,7 +134,7 @@ const Login = () => {
                 <p className="text-center text-xs text-black">
                   Don't have an account?{' '}
                   <Link
-                    href="/signup"
+                    to="/signup"
                     className="text-center text-xs text-[#287CCD]"
                   >
                     Signup
