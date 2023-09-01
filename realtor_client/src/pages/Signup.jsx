@@ -20,7 +20,7 @@ const Signup = () => {
   return (
     <React.Fragment>
       <Header />
-      <section className="w-full h-[100vh] flex flex-col justify-center items-center md:px-0 px-5 bg-gray-100">
+      <section className="w-full h-[600px] md:h-[100vh] flex flex-col justify-center items-center md:px-0 px-5 bg-gray-100">
         <div className="shadow-[0px_8px_16px_#D0D2D5] bg-white py-8 px-10 rounded-xl">
          
           <Formik
