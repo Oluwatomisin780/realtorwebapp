@@ -5,40 +5,40 @@ import { FaBars } from 'react-icons/fa';
 const Links = [
   {
     id: 1,
-    title: "Home",
-    link: "/"
+    title: 'Home',
+    link: '/',
   },
   {
     id: 2,
-    title: "Service",
-    link: "/service"
+    title: 'Service',
+    link: '/service',
   },
   {
     id: 3,
-    title: "About Us",
-    link: "/about"
-  }
+    title: 'About Us',
+    link: '/about',
+  },
 ];
 
 const Header = () => {
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-const location = useLocation()
+  const location = useLocation();
   const toggleNav = () => {
     setOpen(!open);
   };
 
   return (
-    <nav className='h-[100px] flex p-10  justify-between items-center '>
+    <nav className="h-[100px] flex p-10  justify-between items-center ">
       <Link to="/">
-       <h1 className=" text-[#287CCD] font-bold text-[25px]">BrownTom</h1>
+        <h1 className=" text-[#287CCD] font-bold text-[25px]">BrownTom</h1>
       </Link>
-      
-      
 
       <FaBars
         onClick={toggleNav}
-        className={` ${open ? '' : ''} md:hidden h-[30px] w-[40px] cursor-pointer`}
+        className={` ${
+          open ? '' : ''
+        } md:hidden h-[30px] w-[40px] cursor-pointer`}
       />
 
       <div className={`hidden md:flex md:items-center md:gap-[20px]`}>
@@ -54,7 +54,6 @@ const location = useLocation()
           </Link>
         ))}
       </div>
-      
 
       <div
         className={`absolute right-[35px] top-[85px] md:hidden flex flex-col items-center text-white gap-[20px] bg-[#287CCD] w-[200px] rounded-[10px] `}
@@ -73,15 +72,13 @@ const location = useLocation()
             </Link>
           ))}
       </div>
-      <div className=''>
+      <div className="">
         <Link to="/login">
-        
-          <button className='bg-[#287CCD] w-[90px] h-[40px] rounded-[5px] text-white'>Login</button>
-        
+          <button className="bg-[#287CCD] w-[90px] h-[40px] rounded-[5px] text-white">
+            Login
+          </button>
         </Link>
       </div>
-
-      
     </nav>
   );
 };
