@@ -1,11 +1,25 @@
 import React from 'react'
 // import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { useState } from 'react';
+import { data } from '../data/Data';
 
 
 const Home = () => {
+  const [house, setHouse] = useState(data);
+
+  const filterType = (category) => {
+    setHouse(
+      data.filter((item) => {
+        return item.category === category;
+      })
+    );
+  };
+
   return (
-    <div className=" h-screen bg-cover bg-center  "  style={{  backgroundImage: "url('./heroimg.jpg')" }}>
+   
+    <div className=' bg-[#fff]'>
+         <div className="  bg-cover bg-center  "  style={{  backgroundImage: "url('./heroimg.jpg')" }}>
         <Header/>
         <div className="flex  justify-evenly items-center h-[500px]  flex-col" >
         
@@ -17,8 +31,56 @@ const Home = () => {
         </div> 
                     <button className='bg-[#287CCD] w-[120px] h-[40px] rounded-[5px] text-white'>Get Started</button>
 
-        </div>
+      </div>
+      
         
+      </div>
+      <div className='flex justify-center -mt-10 items-center'>
+        <div className='md:w-[900px] gap-2 md:h-[110px] bg-[#fff] shadow-[0px_8px_16px_#D0D2D5] rounded-[8px] '>
+          <h1 className='text-[22px] p-3 font-bold'>Search for the best homes</h1>
+          <div className='flex justify-center text-[#000] items-center gap-2'>
+            <input type="text" placeholder='location' className='focus:bg-transparent focus:ring-2 p-2 focus:border-[#287CCD]' />
+            <input type="text" placeholder='type' className='focus:bg-transparent focus:ring-2 p-2 focus:border-[#287CCD]' />
+            <input type="text" placeholder='budget' className='focus:bg-transparent focus:ring-2 p-2 focus:border-[#287CCD]' />
+            <button className='bg-[#287CCD] w-[120px] h-[40px] rounded-[5px] text-white'>Search Now</button>
+          </div>
+
+          </div>
+      </div>
+       <div className='w-full  mt-5 gap-2 bg-[#fff] shadow-[0px_8px_16px_#D0D2D5] rounded-[8px]  '>
+          <h1 className='text-[22px] p-3 font-bold'>Popular Villas</h1>
+        <div className='grid md:grid-cols-3 grid-cols-1 text-[#000] place-items-center gap-2'>
+          {house.map((item, index) => (
+            <div key={index} className='w-[410px] flex flex-col shadow-[0px_8px_16px_#D0D2D5] p-2 h-[410px] bg-[#fff] rounded-[8px]'>
+              <div className='flex items-center'>
+                <img src={item.image} alt={item.name}  className=' w-[400px] h-[250px] rounded-[8px]' />
+              </div>
+              <div>
+                <h1 className='text-[13px] p-2 md:text-base font-bold'>{item.name}</h1>
+              </div>
+              <div className='flex justify-evenly text-slate-500 gap-2'>
+                <span>2 bed</span>
+                <span>2 bath</span>
+                <span>100 m</span>
+              </div>
+              <div>
+                <div>
+                  <h1 className='text-[13px] p-2 text-[#287CCD] md:text-base font-bold'>{item.price}<span className='text-[13px] text-[#287dcd8d] md:text-base font-bold'>{item.duration}</span></h1>
+                </div>
+                <div className='flex items-center justify-between '>
+                  <button className='bg-[#287CCD] w-[190px] h-[40px] rounded-[5px] text-white'>Book Now</button>
+                  <button className='bg-[#111] w-[190px] h-[40px] rounded-[5px] text-white'>Calender</button>
+                </div>
+              </div>
+            </div>
+          ))}
+          
+          
+           
+        </div>
+
+      </div>
+      
     </div>
   )
 }
