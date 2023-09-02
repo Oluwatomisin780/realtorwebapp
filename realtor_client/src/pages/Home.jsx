@@ -13,13 +13,13 @@ import {AiFillPushpin} from 'react-icons/ai'
 const Home = () => {
   const [house, setHouse] = useState(data);
 
-  const filterType = (category) => {
-    setHouse(
-      data.filter((item) => {
-        return item.category === category;
-      })
-    );
-  };
+  // const filterType = (category) => {
+  //   setHouse(
+  //     data.filter((item) => {
+  //       return item.category === category;
+  //     })
+  //   );
+  // };
 
   return (
    
@@ -52,8 +52,12 @@ const Home = () => {
 
           </div>
       </div>
-       <div className='w-full  mt-5 gap-2 bg-[#fff] shadow-[0px_8px_16px_#D0D2D5] rounded-[8px]  '>
-          <h1 className='text-[22px] p-3 font-bold'>Popular Villas</h1>
+      <div className='w-full  mt-5 gap-2 bg-[#fff] shadow-[0px_8px_16px_#D0D2D5] rounded-[8px]  '>
+        <div className='flex justify-between p-4'>
+          <h1 className='text-[22px] font-bold'>Popular Villas</h1>
+          <span onClick={()=>setHouse(data)} className='text-[#287CCD] font-bold cursor-pointer'>View all</span>
+        </div>
+       
         <div className='grid md:grid-cols-3 grid-cols-1 text-[#000] place-items-center gap-2'>
           {house.map((item, index) => (
             <div key={index} className='w-[400px] flex flex-col hover:scale-105 duration-300 cursor-pointer shadow-[0px_8px_16px_#D0D2D5] p-2 h-[410px] bg-[#fff] rounded-[8px]'>
