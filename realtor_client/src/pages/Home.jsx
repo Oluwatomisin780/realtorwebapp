@@ -3,7 +3,7 @@ import React from 'react';
 import Header from '../components/Header';
 import { useState } from 'react';
 import { data } from '../data/Data';
-import { FaBed, FaBath } from 'react-icons/fa';
+import { FaBed, FaBath, FaLandmark } from 'react-icons/fa';
 import { IoLocation } from 'react-icons/io5';
 import { SiCashapp } from 'react-icons/si';
 import { AiFillPushpin } from 'react-icons/ai';
@@ -109,6 +109,10 @@ const Home = () => {
                   <FaBath className="fill-[#287CCD]" />
                 </span>
                 <span className="flex justify-center items-center gap-2 ">
+                  {item.landSize}
+                  <FaLandmark className="fill-[#287CCD]" />
+                </span>
+                <span className="flex justify-center items-center gap-2 ">
                   <IoLocation className="fill-[#287CCD]" />
                   {item.location}
                 </span>
@@ -127,7 +131,7 @@ const Home = () => {
                     Book Now
                   </button>
                   <button className="bg-[#111] w-[180px] h-[40px] rounded-[5px] text-white">
-                    Calender
+                    Inquiry
                   </button>
                 </div>
               </div>
