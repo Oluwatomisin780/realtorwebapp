@@ -64,7 +64,7 @@ const Home = () => {
               className="focus:bg-transparent focus:ring-2 p-2 focus:border-[#287CCD]"
             />
             <SiCashapp className="fill-[#287CCD]" />
-            <button className="bg-[#287CCD] w-[120px] h-[40px] rounded-[5px] text-white">
+            <button className="bg-[#000] w-[120px] h-[40px] rounded-[5px] text-white">
               Search Now
             </button>
           </div>
