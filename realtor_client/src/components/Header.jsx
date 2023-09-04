@@ -31,7 +31,7 @@ const location = useLocation()
   return (
     <nav className='h-[100px] flex p-10  justify-between items-center '>
       <Link to="/">
-       <h1 className=" text-[#287CCD] font-bold text-[25px]">BrownTom</h1>
+       <h1 className=" text-[#287CCD] font-bold text-[25px]">Tina</h1>
       </Link>
       
       
