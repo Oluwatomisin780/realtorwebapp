@@ -41,7 +41,7 @@ const Home = () => {
         </div>
       </div>
       <div className="flex justify-center -mt-10 items-center">
-        <div className="md:w-[900px] gap-2 md:h-[110px] bg-[#fff] shadow-[0px_8px_16px_#D0D2D5] rounded-[8px] ">
+        <div className="md:w-[900px] sm:w-[900px] gap-2 md:h-[110px] bg-[#fff] shadow-[0px_8px_16px_#D0D2D5] rounded-[8px] ">
           <h1 className="text-[22px] p-3 font-bold">
             Search for the best homes
           </h1>
@@ -64,7 +64,7 @@ const Home = () => {
               className="focus:bg-transparent focus:ring-2 p-2 focus:border-[#287CCD]"
             />
             <SiCashapp className="fill-[#287CCD]" />
-            <button className="bg-[#000] w-[120px] h-[40px] rounded-[5px] text-white">
+            <button className="bg-[#287CCD] w-[120px] h-[40px] rounded-[5px] text-white">
               Search Now
             </button>
           </div>
