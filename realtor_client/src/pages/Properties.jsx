@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../components/Header'
 
-const Service = () => {
+const Properties = () => {
   return (
       <div>
           <Header/>
@@ -10,4 +10,4 @@ const Service = () => {
   )
 }
 
-export default Service
+export default Properties;

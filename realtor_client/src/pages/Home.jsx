@@ -7,6 +7,7 @@ import { FaBed, FaBath, FaLandmark } from 'react-icons/fa';
 import { IoLocation } from 'react-icons/io5';
 import { SiCashapp } from 'react-icons/si';
 import { AiFillPushpin } from 'react-icons/ai';
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
   const [house, setHouse] = useState(data);
@@ -88,11 +89,14 @@ const Home = () => {
               className="w-[400px] flex flex-col hover:scale-105 duration-300 cursor-pointer shadow-[0px_8px_16px_#D0D2D5] p-2 h-[410px] bg-[#fff] rounded-[8px]"
             >
               <div className="flex items-center">
-                <img
+                <NavLink to={`/product/${item.id}`}>
+                  <img
                   src={item.image}
                   alt={item.name}
                   className=" w-[380px] h-[250px] rounded-[8px]"
                 />
+                </NavLink>
+                
               </div>
               <div>
                 <h1 className="text-[13px] p-2 md:text-base font-bold">

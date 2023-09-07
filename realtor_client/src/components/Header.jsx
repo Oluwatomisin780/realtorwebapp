@@ -10,8 +10,8 @@ const Links = [
   },
   {
     id: 2,
-    title: 'Service',
-    link: '/service',
+    title: 'Properties',
+    link: '/properties',
   },
   {
     id: 3,
