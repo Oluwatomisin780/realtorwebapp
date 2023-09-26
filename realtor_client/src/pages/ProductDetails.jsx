@@ -1,15 +1,23 @@
-import {useContext} from 'react';
+import { useContext } from 'react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 //import params
 import { useParams } from 'react-router-dom';
-
 //import product context 
 import { ProductContext } from '../context/ProductContext';
+import Header from '../components/Header';
+
 
 const ProductDetails = () => {
   //get the product id from the url
   const {id} = useParams();
-  const {products} = useContext(ProductContext);
- 
+  const { products } = useContext(ProductContext);
+  
+
 
   //get the single product based on the id 
   const product = products.find((item) => { 
@@ -22,21 +30,88 @@ const ProductDetails = () => {
   }
 
   //destructure product 
-  const{title, price, description, image } = product;
+  const { title, price, description, image,image2,image3,image4,image5,image6,image7,image8,image9 } = product;
+  
+  
 
   return (
-    <section className='pt-32 pb-12 lg:py-32 h-screen flex items-center'>
-      <div className="container mx-auto">
+    <section className=''>
+      <Header />
+      <div className="container mx-auto   flex items-center">
         {/*image & text wrapper*/}
-        <div className=' items-center'>
              {/*image*/}
-            <div className='flex flex-1 justify-center items-center mb-8
-            lg:mb-0 '>
-              <img className='max-w-[200px] lg:max-w-sm' src={image} alt="" />
-            </div>
-            
+           
+          <Swiper className='flex mt-5 justify-evenly items-center'
+                   style={{
+                    "--swiper-navigation-color":"black",
+                    "--swiper-navigation-size":"3.3rem"
+                }}
+                centeredSlides={true}
+                slidesPerView={3}
+                loop={true}
+                breakpoints={{
+                  // when window width is >= 320px
+                  320: {
+                    slidesPerView: 1,
+                   
+                  },
+                  // when window width is >= 480px  
+                  480: {
+                    slidesPerView: 1,
+                    
+                  },
+                  768: {
+                    slidesPerView: 3,
+                    
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    
+                  },
+                }}
+                autoplay={{
+                    delay:3000,
+                    disableOnInteraction:false,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                >
+                  <SwiperSlide>
+                    <img src={image} width={400} height={400}  alt='slide image' className='rounded-[5px] h-[260px] max-w-[200px] lg:max-w-2xl'  />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={image2} width={400} height={400}  alt='slide image' className='rounded-[5px] h-[260px] max-w-[200px] lg:max-w-2xl'  />
+                  </SwiperSlide>
+                  <SwiperSlide className=''>
+                    <img src={image3} width={400} height={400}  alt='slide image' className='rounded-[5px] h-[260px] max-w-[200px] lg:max-w-2xl'  />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={image4} width={400} height={400}  alt='slide image' className='rounded-[5px] h-[260px] max-w-[200px] lg:max-w-2xl'  />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={image5} width={400} height={400}  alt='slide image' className='rounded-[5px] h-[260px] max-w-[200px] lg:max-w-2xl'  />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={image6} width={400} height={400}  alt='slide image' className='rounded-[5px] h-[260px] max-w-[200px] lg:max-w-2xl'  />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={image7} width={400} height={400}  alt='slide image' className='rounded-[5px] h-[260px] max-w-[200px] lg:max-w-2xl'  />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={image8} width={400} height={400}  alt='slide image' className='rounded-[5px] h-[260px] max-w-[200px] lg:max-w-2xl'  />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img src={image9} width={400} height={400}  alt='slide image' className='rounded-[5px] h-[260px] max-w-[200px] lg:max-w-2xl'  />
+                  </SwiperSlide>
+                                      
+        </Swiper>
+        <div>
+ 
         </div>
-      </div>
+          </div>
+
+        
+      
     </section>
   )
 }
