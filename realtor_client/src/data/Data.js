@@ -1,11 +1,10 @@
 export const data = [
   {
     id: 1,
-    name: 'London, UK',
+    name: 'Mandela Lodge, UK',
     category: 'residential',
     image: '/villa1.jpg',
     image2: '/villa1.jpg',
-    image3: '/villa1.jpg',
     image3: '/villa1.jpg',
     image4: '/villa1.jpg',
     image5: '/villa1.jpg',
@@ -18,7 +17,7 @@ export const data = [
     bath: 2,
     landSize: 500,
     duration: '/month',
-    location: 'Ikeja',
+    location: 'UK',
   },
   {
     id: 2,
@@ -38,7 +37,8 @@ export const data = [
     bath: 4,
     landSize: 400,
     duration: '/month',
-    location: 'Ikotun',
+    location: 'USA',
+
   },
   {
     id: 3,
@@ -58,11 +58,12 @@ export const data = [
     landSize: 4500,
     bath: 6,
     duration: '/month',
-    location: 'Ghana',
+    location: 'USA',
+
   },
   {
     id: 4,
-    name: 'NY, USA',
+    name: 'Nkrumah Avenue, GH',
     category: 'condo',
     image: '/villa3.jpg',
     image2: '/villa3.jpg',
@@ -78,11 +79,11 @@ export const data = [
     bath: 4,
     landSize: 4300,
     duration: '/month',
-    location: 'Namibia',
+    location: 'Ghana',
   },
   {
     id: 5,
-    name: 'NY, USA',
+    name: 'Baba Yara Villa, GH',
     category: 'residental',
     image: '/villa2.jpg',
     image2: '/villa2.jpg',
@@ -98,15 +99,15 @@ export const data = [
     bath: 4,
     landSize: 3000,
     duration: '/month',
-    location: 'Usa',
+    location: 'Ghana',
+
   },
   {
     id: 6,
-    name: 'NY, USA',
+    name: 'Tinibu, NG',
     category: 'Condo',
     image: '/villa1.jpg',
     image2: '/villa1.jpg',
-    image3: '/villa1.jpg',
     image3: '/villa1.jpg',
     image4: '/villa1.jpg',
     image5: '/villa1.jpg',
@@ -119,6 +120,7 @@ export const data = [
     bath: 4,
     landSize: 4400,
     duration: '/month',
-    location: 'Uk',
+    location: 'Nigeria',
+
   },
 ];
