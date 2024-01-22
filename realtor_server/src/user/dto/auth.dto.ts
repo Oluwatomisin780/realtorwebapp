@@ -17,6 +17,7 @@ export class SignupDto {
   @Matches(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/, {
     message: 'phone  must be valid phone number',
   })
+  @ApiProperty()
   phone: string;
   @ApiProperty()
   @IsString()

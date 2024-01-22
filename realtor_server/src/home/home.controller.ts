@@ -51,6 +51,11 @@ export class HomeController {
     };
     return this.homeService.getAllHome(filter);
   }
+  //get all  home
+  @Get('/all')
+  getAllHomes() {
+    return this.homeService.getAllHomes();
+  }
 
   @Get(':id')
   getHomeById(@Param('id') id: string) {

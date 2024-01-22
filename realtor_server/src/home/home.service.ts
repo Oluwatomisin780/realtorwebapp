@@ -61,6 +61,10 @@ export class HomeService {
       return new HomeResponseDto(fetchHome);
     });
   }
+  async getAllHomes() {
+    const homes = await this.prismaService.home.findMany();
+    return homes;
+  }
   async getHomeById(id: number) {
     const home = await this.prismaService.home.findUnique({
       where: {
