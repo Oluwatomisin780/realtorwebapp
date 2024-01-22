@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { PropertyType } from '@prisma/client';
 import { Exclude, Expose, Type } from 'class-transformer';
 import {
@@ -55,36 +56,45 @@ export class HomeResponseDto {
   }
 }
 class Image {
+  @ApiProperty()
   @IsString()
   @IsNotEmpty()
   url: string;
 }
 export class CreateResponseDto {
   @IsString()
+  @ApiProperty()
   @IsNotEmpty()
   address: string;
   @IsNumber()
   @IsNotEmpty()
   @IsPositive()
+  @ApiProperty()
   numberOfBedrooms: number;
   @IsNumber()
   @IsNotEmpty()
   @IsPositive()
+  @ApiProperty()
   numberOfBathrooms: number;
   @IsString()
   @IsNotEmpty()
+  @ApiProperty()
   city: string;
   @IsNumber()
   @IsPositive()
+  @ApiProperty()
   price: number;
   @IsNumber()
   @IsPositive()
+  @ApiProperty()
   landSize: number;
   @IsEnum(PropertyType)
+  @ApiProperty()
   propertyType: PropertyType;
   @IsArray()
   @ValidateNested({ each: true })
   @Type(() => Image)
+  @ApiProperty()
   images: Image[];
 }
 
@@ -92,37 +102,45 @@ export class updateHomeDto {
   @IsOptional()
   @IsString()
   @IsNotEmpty()
+  @ApiProperty()
   address: string;
   @IsNumber()
   @IsNotEmpty()
   @IsOptional()
   @IsPositive()
+  @ApiProperty()
   numberOfBedrooms: number;
   @IsOptional()
   @IsNumber()
   @IsNotEmpty()
   @IsPositive()
+  @ApiProperty()
   numberOfBathrooms: number;
   @IsOptional()
   @IsString()
   @IsNotEmpty()
+  @ApiProperty()
   city: string;
 
   @IsOptional()
   @IsNumber()
   @IsPositive()
+  @ApiProperty()
   price: number;
   @IsOptional()
   @IsNumber()
   @IsPositive()
+  @ApiProperty()
   landSize: number;
   @IsOptional()
   @IsEnum(PropertyType)
+  @ApiProperty()
   propertyType: PropertyType;
 }
 
 export class InquireDto {
   @IsString()
   @IsNotEmpty()
+  @ApiProperty()
   message: string;
 }
