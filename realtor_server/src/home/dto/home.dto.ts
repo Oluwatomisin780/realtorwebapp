@@ -15,7 +15,7 @@ import {
 } from 'class-validator';
 
 export class HomeResponseDto {
-  id: number;
+  id: string;
   address: string;
   @Exclude()
   number_of_bedrooms: number;
@@ -50,7 +50,7 @@ export class HomeResponseDto {
   @Exclude()
   updatedAt: Date;
   @Exclude()
-  realtor_id: number;
+  realtor_id: string;
   constructor(partial: Partial<HomeResponseDto>) {
     Object.assign(this, partial);
   }

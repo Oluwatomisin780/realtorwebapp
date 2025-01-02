@@ -49,7 +49,7 @@ export class GenerateProductKeyDto {
   @IsEmail()
   @ApiProperty()
   email: string;
-  @ApiProperty()
+  @ApiProperty({ enum: ['BUYER', 'REALTOR', 'ADMIN'] })
   @IsEnum(UserType)
   userType: UserType;
 }

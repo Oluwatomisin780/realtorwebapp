@@ -65,7 +65,7 @@ export class HomeService {
     const homes = await this.prismaService.home.findMany();
     return homes;
   }
-  async getHomeById(id: number) {
+  async getHomeById(id: string) {
     const home = await this.prismaService.home.findUnique({
       where: {
         id: id,
@@ -85,7 +85,7 @@ export class HomeService {
       propertyType,
       images,
     }: createHomeParams,
-    userId: number,
+    userId: string,
   ) {
     const home = await this.prismaService.home.create({
       data: {
@@ -105,7 +105,7 @@ export class HomeService {
     await this.prismaService.image.createMany({ data: homeImages });
     return new HomeResponseDto(home);
   }
-  async updateHome(body: updatedHomeParams, id: number) {
+  async updateHome(body: updatedHomeParams, id: string) {
     const home = await this.prismaService.home.findUnique({ where: { id } });
     if (!home) throw new NotFoundException();
     const updateHome = await this.prismaService.home.update({
@@ -116,7 +116,7 @@ export class HomeService {
     });
     return new HomeResponseDto(updateHome);
   }
-  async deleteHome(id: number) {
+  async deleteHome(id: string) {
     const home = await this.prismaService.home.findUnique({
       where: {
         id,
@@ -135,7 +135,7 @@ export class HomeService {
     });
     return { id: deleteHome.id };
   }
-  async getRealtorByHomeId(id: number) {
+  async getRealtorByHomeId(id: string) {
     const home = await this.prismaService.home.findUnique({
       where: {
         id,
@@ -168,7 +168,7 @@ export class HomeService {
       },
     });
   }
-  async getHomeMessage(homeId: number) {
+  async getHomeMessage(homeId: string) {
     return this.prismaService.message.findMany({
       where: {
         home_id: homeId,

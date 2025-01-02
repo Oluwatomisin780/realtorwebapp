@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 enum PropertyType{
@@ -15,7 +15,7 @@ CONDO
 }
 
 model User{
-    id                  Int  @id   @default(autoincrement())
+    id                  String  @id   @default(auto()) @db.ObjectId @map("_id")
     name                String 
     phone               String
     email               String    @unique
@@ -29,7 +29,7 @@ model User{
 
 }
 model Home{
-  id                        Int        @id   @default(autoincrement())
+  id                        String      @id   @default(auto()) @db.ObjectId @map("_id")
 address                     String 
 number_of_bedrooms          Int
 number_of_bathrooms         Float
@@ -41,29 +41,29 @@ propertyType                PropertyType
 createdAt                   DateTime   @default(now())
 updatedAt                   DateTime   @updatedAt
 images                      Image[]
-realtor_id                  Int 
+realtor_id                  String  @db.ObjectId
 realtor                     User  @relation(fields: [realtor_id],references: [id])
 messages                    Message[]
 }
 
 model Message{
-  id          Int @id  @default(autoincrement())
+  id          String @id  @default(auto())  @db.ObjectId @map("_id")
 
   message     String 
-  home_id     Int
+  home_id     String  @db.ObjectId
   home         Home @relation(fields: [home_id],references: [id])
-  realtor_id   Int 
+  realtor_id   String   @db.ObjectId 
   realtor       User @relation("buyer_message",fields: [realtor_id],references: [id])
-  buyer_id      Int   
+  buyer_id      String  @db.ObjectId 
   buyer         User   @relation("realtor_message",fields: [buyer_id],references: [id])
 }
 
 model Image{
-   id             Int @id @default(autoincrement())
+   id             String @id @default(auto()) @db.ObjectId   @map("_id")
    url            String
   createdAt       DateTime   @default(now())
   updatedAt       DateTime   @updatedAt 
-  home_id         Int   
+  home_id         String      @db.ObjectId
   home            Home @relation(fields: [home_id],references: [id])
 }
 

@@ -23,6 +23,7 @@ import { PropertyType, UserType } from '@prisma/client';
 import { AuthGuard } from './guard/auth.guard';
 import { Roles } from 'src/decorator/roles.decorator';
 import { userInfo } from 'os';
+import { ApiBasicAuth } from '@nestjs/swagger';
 @Controller('home')
 export class HomeController {
   constructor(private readonly homeService: HomeService) {}
@@ -59,17 +60,19 @@ export class HomeController {
 
   @Get(':id')
   getHomeById(@Param('id') id: string) {
-    return this.homeService.getHomeById(parseInt(id));
+    return this.homeService.getHomeById(id);
   }
+  @ApiBasicAuth()
   @Roles(UserType.REALTOR)
   @Post()
   createHome(@Body() body: CreateResponseDto, @User() user: UserInterface) {
     return this.homeService.createHome(body, user.id);
   }
   @Roles(UserType.REALTOR)
+  @ApiBasicAuth()
   @Patch(':id')
   async updateHome(
-    @Param('id', ParseIntPipe) id: number,
+    @Param('id', ParseIntPipe) id: string,
     @Body() body: updateHomeDto,
     @User() user: UserInterface,
   ) {
@@ -78,9 +81,10 @@ export class HomeController {
     return this.homeService.updateHome(body, id);
   }
   @Roles(UserType.REALTOR)
+  @ApiBasicAuth()
   @Delete(':id')
   async deleteHome(
-    @Param('id', ParseIntPipe) id: number,
+    @Param('id', ParseIntPipe) id: string,
     @User() user: UserInterface,
   ) {
     const realtor = await this.homeService.getRealtorByHomeId(id);
@@ -88,6 +92,7 @@ export class HomeController {
     return this.homeService.deleteHome(id);
   }
   @Roles(UserType.BUYER)
+  @ApiBasicAuth()
   @Post('/:id/inquire')
   inquryHome(
     @Param('id', ParseIntPipe) homeId: number,
@@ -99,7 +104,7 @@ export class HomeController {
   @Roles(UserType.REALTOR)
   @Get('/:id/messages')
   async getHomeMessage(
-    @Param('id', ParseIntPipe) homeId: number,
+    @Param('id', ParseIntPipe) homeId: string,
     @User() userData: UserInterface,
   ) {
     const realtor = await this.homeService.getRealtorByHomeId(homeId);

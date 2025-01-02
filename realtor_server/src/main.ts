@@ -16,6 +16,7 @@ async function bootstrap() {
     }),
   );
   const config = new DocumentBuilder()
+    .addBearerAuth()
     .setTitle('Realtor Api')
     .setDescription('The Realtor API description')
     .setVersion('1.0')
