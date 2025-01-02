@@ -102,6 +102,7 @@ export class HomeController {
     return this.homeService.inquireHome(userData, homeId, message);
   }
   @Roles(UserType.REALTOR)
+  @ApiBasicAuth()
   @Get('/:id/messages')
   async getHomeMessage(
     @Param('id', ParseIntPipe) homeId: string,
